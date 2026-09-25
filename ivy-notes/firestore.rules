@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/notebooks/{notebookId} {
+      function owner() { return request.auth != null && request.auth.uid == userId; }
+      allow read, delete: if owner();
+      allow create, update: if owner()
+        && request.resource.data.keys().hasAll(['payload', 'updatedAt'])
+        && request.resource.data.keys().hasOnly(['payload', 'updatedAt'])
+        && request.resource.data.payload is string
+        && request.resource.data.payload.size() <= 600000
+        && request.resource.data.updatedAt == request.time;
+    }
+  }
+}

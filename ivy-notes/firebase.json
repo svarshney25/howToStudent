@@ -1,0 +1,1 @@
+{"firestore":{"rules":"firestore.rules"},"hosting":{"site":"how-to-student-214b8","public":"dist","ignore":["firebase.json","**/.*","**/node_modules/**"]}}
