@@ -149,7 +149,6 @@ for (const [id, key] of Object.entries({ title: 'title', notes: 'notes', referen
 }
 document.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => showStep(button.dataset.step)));
 document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => $(button.dataset.close).close()));
-$('setup-open').addEventListener('click', () => $('setup-dialog').showModal());
 $('upload-paper').addEventListener('click', () => $('paper-upload').click());
 $('paper-upload').addEventListener('change', event => {
   const file = event.target.files?.[0];
