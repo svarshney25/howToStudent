@@ -1,4 +1,4 @@
-# Ivy Note Workshop
+# Ivy Notes
 
 Ivy is a note-review prototype for How To Student. A student brings the notes they wrote; Ivy points to exact passages that may need another look, gives a hint, then an explanation, and asks the student to revise.
 
